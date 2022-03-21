@@ -1,0 +1,33 @@
+package com.muwaffaq.innopolis.solid.OCP_DI.wrong;
+public class Solution{
+
+public enum Operation {ADD, SUBTRACT, DIVIDE,MULTIPLICATION}
+
+public class Calculator {
+   
+    public  double calculate(Operation operation, double left, double right) {
+        double result;
+        switch (operation) {
+            case ADD:
+                result = left + right;
+                break;
+            case SUBTRACT:
+                result = left - right;
+                break;
+            case DIVIDE:
+                result = left / right;
+                break;
+            default:
+                result = left * right;
+                break;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        CalculatorWrong calculator = new CalculatorWrong();
+        calculator.calculate(Operation.ADD, 6, 7);
+        calculator.calculate(Operation.ADD, 1.5, 1.6);
+    }
+
+}
